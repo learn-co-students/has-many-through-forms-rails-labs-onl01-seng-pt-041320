@@ -9,6 +9,8 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    #@post.categories.build(name: "Video Game Genre")
+    @post.categories.build
   end
 
   def create

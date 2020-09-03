@@ -1,10 +1,16 @@
 <h1><%= @post.title %></h1>
+
 <p>
   <%= @post.content %>
 </p>
-<p>
-Categories: <%= @post.categories.map(&:name).join(' ') %>
-</p>
+
+Categories:<br />
+<ul>
+  <%@post.categories.each do |c|%>
+    <li><%=c.name%></li>
+    <%end%>
+</ul>
+
 <ul>
 <% @post.comments.each do |comment| %>
   <li>
