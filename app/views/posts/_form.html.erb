@@ -1,1 +1,29 @@
 
+<h1>New Posts Page</h1>
+
+<%= form_for @post do |f| %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+
+<p>
+  <%= f.label :content %>
+  <%= f.text_area :content %><br>
+</p>
+
+  <h3><%= f.label :categories %></h3>
+  <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b|  %>
+ <p> 
+      <%= b.label %>
+      <%= b.check_box %>
+      <% end %>
+
+<h3>Or Create Your Own Category!</h3>
+  <%= f.fields_for :categories do |new_cat| %>
+    <%= new_cat.text_field :name %>
+    <% end %>
+
+  <%= f.submit %>
+</p>
+  <% end %>
