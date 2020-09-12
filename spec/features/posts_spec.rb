@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'pry'
 
 describe 'Posts', type: 'feature' do
 
